@@ -79,8 +79,14 @@ function App(){
   ];
 
   function quebraBiscoito(){
-    let aleatorio = Math.floor(Math.random() * frases.length)
+    let aleatorio = Math.floor(Math.random() * frases.length);
     setTextoFrase(' " ' + frases[aleatorio] + ' " ');
+    setImg(require('./src/screens/biscoitoAberto.png'));
+  }
+
+  function reiniciarTudo(){
+    setImg(require('./src/screens/biscoito.png'));
+    setTextoFrase('');
   }
 
   return(
@@ -96,7 +102,7 @@ function App(){
         </View>
       </TouchableOpacity>
 
-      <TouchableOpacity style={[styles.botao, {marginTop: 10, backgroundColor: '#121212'}]} onPress={() => alert('TESTE')}>
+      <TouchableOpacity style={[styles.botao, {marginTop: 10, backgroundColor: '#121212'}]} onPress={ reiniciarTudo }>
         <View style={styles.bntarea}>
           <Text style={styles.bnttexto}>Reiniciar</Text>
         </View>
